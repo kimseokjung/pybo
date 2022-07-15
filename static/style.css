@@ -1,0 +1,20 @@
+
+textarea {
+    width:100%;
+}
+
+input[type=submit] {
+    margin-top:10px;
+}
+.table_body a{
+    text-decoration:none;
+    color:black;
+}
+.comment {
+    border-top: dotted 1px #ddd;
+    font-size: 0.7em;
+}
+
+.comment>a{
+    text-decoration:none;
+}
