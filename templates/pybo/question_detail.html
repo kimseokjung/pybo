@@ -177,7 +177,7 @@
         </div>
         {% else %}
         <textarea name="content" id="content"
-                  rows="10" class="form-control"></textarea>
+                  class="form-control answer_textbox" style="min-height:100px;"></textarea>
         <input type="submit" value="답변 등록" class="btn btn-primary btn-sm">
         {% endif %}
     </form>
@@ -195,6 +195,9 @@
             if(confirm("정말로 추천하시겠습니까?")){
                 location.href = $(this).data('uri');
             }
+        });
+        $("textarea.answer_textbox").on('keydown keyup', function(){
+            $(this).height(1).height( $(this).prop('scrollHeight')+12);
         });
     });
 </script>

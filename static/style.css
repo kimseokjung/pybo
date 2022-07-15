@@ -18,3 +18,7 @@ input[type=submit] {
 .comment>a{
     text-decoration:none;
 }
+
+textarea.answer_textbox{
+    min-height: 50px;
+}
