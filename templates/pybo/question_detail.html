@@ -4,12 +4,12 @@
 <div class="container my-3">
     <!-- 사용자 오류 표시 -->
     {% if messages %}
-    <div class="alert alert-danger my-3" role="alert">
-    {% for message in messages %}
-        <strong>{{ message.tags}}</strong>
-        <ul><li>{{ message.message }}</li></ul>
-    {% endfor %}
-    </div>
+        <div class="alert alert-danger my-3" role="alert">
+        {% for message in messages %}
+            <strong>{{ message.tags}}</strong>
+            <ul><li>{{ message.message }}</li></ul>
+        {% endfor %}
+        </div>
     {% endif %}
     <h2 class="boarder-bottom py-2">{{ question.subject }}</h2>
     <div class="row my-3">
@@ -186,6 +186,13 @@
 {% block script %}
 <script type="text/javascript">
     $(function(){
+<!--        var is_voter = "{{ request.session.is_voter }}"-->
+<!--        sessionStorage.setItem("is_voter",is_voter);-->
+<!--        if (sessionStorage.getItem("is_voter")){-->
+<!--            alert(sessionStorage.getItem("is_voter"));-->
+<!--            sessionStorage.removeItem("is_voter");-->
+<!--            {{ request.session.clear }}-->
+<!--        }-->
         $('.delete').on('click', function(){
             if(confirm("정말로 삭제하시겠습니까?")){
                 location.href = $(this).data('uri');
