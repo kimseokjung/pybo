@@ -13,7 +13,7 @@ def vote_question(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     # for user in question.voter.all():
     #     if request.user == user:
-    #         request.session['is_voter'] = "이미 추천했습니다"
+    #         request.set_cookie('is_voter', 'test')
     if request.user == question.author:
         messages.error(request, '본인이 작성한 글은 추천할 수 없습니다')
     else:
