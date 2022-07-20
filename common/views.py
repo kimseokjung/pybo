@@ -23,7 +23,7 @@ def signup(request):
 
 def page_not_found_404(request, exception):
     """
-    404 Page no found
+    404 Page not found
     """
 
     return render(request, 'common/404.html', {})
@@ -31,7 +31,7 @@ def page_not_found_404(request, exception):
 
 def page_not_found_500(request, exception):
     """
-    404 Page no found
+    500 Page not found
     """
 
     return render(request, 'common/500.html', {})
