@@ -162,7 +162,7 @@ LOGGING = {
         },
         'file': {
             'level': 'INFO',
-            'filters': ['require_debug_false'],
+            'filters': ['spacial'],
             'class': 'logging.handler.RotatingFileHandler',
             'filename': BASE_DIR / 'logs/mysite.log',
             'maxBytes': 1024*1024*5,    # 5MB
