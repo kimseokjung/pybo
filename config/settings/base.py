@@ -147,7 +147,6 @@ LOGGING = {
             'level': 'INFO',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'django.server'
         },
         'django.server': {
             'level': 'INFO',
@@ -177,7 +176,7 @@ LOGGING = {
         'django.server': {
             'handlers': ['django.server'],
             'level': 'INFO',
-            'propagate': False
+            'propagate': False,
         }
     }
 }
