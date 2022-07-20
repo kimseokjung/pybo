@@ -135,9 +135,8 @@ LOGGING = {
         },
     },
     'filters': {
-        'special': {
-            '()': 'project.logging.SpecialFilter',
-            'foo': 'bar',
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
         },
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
@@ -158,11 +157,11 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
-            'filters': ['special']
+            'filters': ['require_debug_false']
         },
         'file': {
             'level': 'INFO',
-            'filters': ['spacial'],
+            'filters': ['require_debug_false'],
             'class': 'logging.handler.RotatingFileHandler',
             'filename': BASE_DIR / 'logs/mysite.log',
             'maxBytes': 1024*1024*5,    # 5MB
