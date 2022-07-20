@@ -174,7 +174,7 @@ LOGGING = {
             'handlers': ['console', 'mail_admin', 'file'],
             'level': 'INFO',
         },
-        'myproject.custom': {
+        'django.server': {
             'handlers': ['django.server'],
             'level': 'INFO',
             'propagate': False
