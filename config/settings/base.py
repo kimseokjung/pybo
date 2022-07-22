@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'ckeditor_uploader',
     'common.apps.CommonConfig',
     'pybo.apps.PyboConfig',
     'django.contrib.admin',
