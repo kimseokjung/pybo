@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load pybo_filter %}
+{% block content %}
+<div class="container overflow-hidden text-center" >
+    <div class="fw-bold text-start my-3" style="font-size: 24pt;">상품 목록</div>
+    <div class="row g-2">
+        {% if product_list %}
+            {% for product in product_list %}
+            <div class="col-4 p-3">
+                <div class="card border-light mb-3" style="width: 18rem; padding:0;">
+                    {% for image in product.images_set.all %}
+                    <img src="{{ image.img.url }}" class="card-img-top"  alt="">
+                    {% endfor %}
+                    <div class="card-body">
+                        <div class="card-text">{{ product.product_name }} </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="col">상품이 없습니다</div>
+        {% endif %}
+    </div>
+
+
+</div>
+{% endblock %}

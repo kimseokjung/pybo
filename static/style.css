@@ -22,3 +22,8 @@ input[type=submit] {
 textarea.answer_textbox{
     min-height: 50px;
 }
+
+.products_box{
+    width: 450px;
+    min-width: 300px;
+}
