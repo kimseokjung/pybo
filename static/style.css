@@ -27,3 +27,5 @@ textarea.answer_textbox{
     width: 450px;
     min-width: 300px;
 }
+
+.pointer { cursor: pointer; }

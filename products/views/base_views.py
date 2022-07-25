@@ -2,8 +2,9 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q, Count
 from django.http import HttpResponse
+import re
 
-from ..models import Products
+from ..models import Products, Images
 
 
 def index(request):
@@ -44,11 +45,16 @@ def index(request):
     context = {'product_list': product_list}
     return render(request, 'products/product_list.html', context)
 
-#
-# def detail(request, question_id):
-#     """
-#     pybo 내용 출력
-#     """
-#     question = get_object_or_404(Question, pk=question_id)
-#     context = {'question': question}
-#     return render(request, 'pybo/question_detail.html', context)
+
+def detail(request, product_id):
+    """
+    pybo 내용 출력
+    """
+    product_size = []
+    product = get_object_or_404(Products, pk=product_id)
+    size = product.product_size.split()
+    for i in range(len(size)):
+        product_size += re.findall(r'\d+', size[i])
+
+    context = {'product': product, 'product_size': product_size}
+    return render(request, 'products/product_detail.html', context)

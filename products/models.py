@@ -23,5 +23,6 @@ class Products(models.Model):
 
 class Images(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, null=False)
+    objects = models.Manager()
     img = models.ImageField(upload_to='images/', null=False)
-# product_thumb = ImageSpecField(source='image', processors=[ResizeToFill(200, 100)], format='JPEG')
+

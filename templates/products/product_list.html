@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 {% load pybo_filter %}
+{% load humanize %}
 {% block content %}
 <div class="container overflow-hidden text-center" >
     <div class="fw-bold text-start my-3" style="font-size: 24pt;">상품 목록</div>
-    <div class="row g-2">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         {% if product_list %}
             {% for product in product_list %}
-            <div class="col-4 p-3">
-                <div class="card border-light mb-3" style="width: 18rem; padding:0;">
-                    {% for image in product.images_set.all %}
-                    <img src="{{ image.img.url }}" class="card-img-top"  alt="">
-                    {% endfor %}
-                    <div class="card-body">
-                        <div class="card-text">{{ product.product_name }} </div>
-                    </div>
+            <div class="col">
+                <div class="card mb-3" style="width: 18rem; padding:0;">
+                    <a class="text-decoration-none text-black" href="{% url 'products:detail' product.id %}">
+                        {% for image in product.images_set.all %}
+                        <img src="{{ image.img.url }}" class="card-img-top"  alt="">
+                        {% endfor %}
+                        <div class="card-body">
+                            <div class="card-title fw-bold">{{ product.product_name }} </div>
+                            <div class="card-text">
+                                <span id="price">{{ product.product_price|intcomma }}</span>
+                                <span>원</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             {% endfor %}
@@ -21,7 +28,5 @@
         <div class="col">상품이 없습니다</div>
         {% endif %}
     </div>
-
-
 </div>
 {% endblock %}
