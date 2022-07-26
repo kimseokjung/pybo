@@ -38,8 +38,8 @@
                         <div>사이즈</div>
                         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center mt-3">
                             {% for size in product_size %}
-                            <div class="col g-1 size pointer" id="{{ size }}">
-                                <div class="p-2 border">{{ size }}</div>
+                            <div class="col g-1 size pointer " id="{{ size }}">
+                                <div class="p-2 outline_box">{{ size }}</div>
                             </div>
                             {% endfor %}
                         </div>
@@ -74,7 +74,7 @@
         $(".size").click(function(){
             var id = $(this).attr("id");
             $("#"+id).find('div')
-                .toggleClass("text-bg-primary", "size_select")
+                .toggleClass("text-bg-primary")
                 .toggleClass("size_select");
         });
         $('.ckeditor-body').find('p').attr('class', 'd-flex justify-content-center flex-column');
